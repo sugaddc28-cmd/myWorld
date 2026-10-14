@@ -77,3 +77,7 @@ crashlytics-build.properties
 
 # Local editor configuration
 /.vscode/
+
+# Generated compiled Udon programs
+/Assets/SerializedUdonPrograms/
+/Assets/SerializedUdonPrograms.meta

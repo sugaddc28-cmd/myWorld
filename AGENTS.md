@@ -1,25 +1,6 @@
-# VRChat World Development
+# このプロジェクトで作業するエージェントへ
 
-## Environment
-- Unity 2022.3.22f1
-- VRChat Worlds SDK
-- UdonSharp
+作業を始める前に、[ドキュメント/開発方針.md](ドキュメント/開発方針.md) を読み、その指示に従ってください。
+現在の作業状況は [作業一覧](ドキュメント/作業一覧.md)、過去の変更と確認結果は [作業ログ](ドキュメント/作業ログ.md) を参照してください。
 
-## Official Documentation
-- UdonSharp:
-  https://creators.vrchat.com/worlds/udon/udonsharp/
-- VRChat SDK:
-  https://creators.vrchat.com/worlds/
-- Unity Scripting API (2022.3):
-  https://docs.unity3d.com/ja/2022.3/ScriptReference/
-- Unity Manual (2022.3):
-  https://docs.unity3d.com/ja/2022.3/Manual/
-
-## Rules
-- Consult relevant official documentation before using unfamiliar APIs.
-- Do not assume standard C# features work in UdonSharp.
-- Do not assume all Unity APIs are exposed to Udon.
-- Check UdonSharp Class Exposure Tree when API availability is uncertain.
-- For multiplayer features, consult VRChat Networking documentation.
-- Do not use Unity 6 APIs unless available in Unity 2022.3.
-- If documentation cannot be accessed, explicitly report the uncertainty.
+このファイルはエージェントが指示を見つける入口として、プロジェクト直下に置きます。
