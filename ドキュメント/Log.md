@@ -1,9 +1,47 @@
 # 作業ログ
 
 実施内容・確認結果・未確認事項を日付ごとに記録する。
-今後の作業は [作業一覧](作業一覧.md)、継続して守るルールは [開発方針](開発方針.md) を参照。
+全体の目標と日程は [工程表](工程表.md)、今後の作業は [TODO](TODO.md)、継続して守るルールは [開発方針](開発方針.md) を参照。
+
+## 2026-10-15
+
+### ペンの入力処理（手順2）
+
+- ユーザーから練習用の線を表示できているとの報告あり。表示確認済みとしてTODOに反映。
+- 既存サンプルは現在 `Assets/MyAssets/LineRendererExample.cs` にあり、PenInputも同じフォルダーへ作成。
+- VRChat公式のEvent NodesとVRC Pickupの資料を参照。`OnPickupUseDown` / `OnPickupUseUp` で保持中のUse押下・解放を受け取る設計。
+- `PenInput` は描画中フラグと確認用Consoleログを用意。`OnDrop` でもフラグを解除する。軌跡の描画は次の段階。
+- Unity Editorの `UdonSharpHelper.EnsureProgramAsset` で同名Program Assetを作成・コンパイル。
+- Source Scriptの一致、個別のコンパイル済みプログラムの存在、`AnyUdonSharpScriptHasError() == false` を確認。検証用Editorコマンドの名前空間不足を修正して再実行した結果。
+- 現在開いているシーンは `Assets/MyAssets/Scenes/Main.unity`。既存文書のシーンパスとは異なるため、今後の取り付け時は実際の対象を確認する。
+- 開発方針に従いシーンへの取り付けは未実施。実際の入力とVRでの操作も未確認。
+
+### ペンの保持・手放す操作
+
+- ユーザーから、一度クリックするとペンを保持し、右クリックで手放す動作との報告あり。
+- 保持中の左クリックを文字や線の描画に使うため、この保持動作で進める。
+- この報告では、VRでの操作、握る位置・向き、描画処理の動作確認までは完了扱いにしない。UnityのPickup設定値は今回未確認。
 
 ## 2026-10-14
+
+### Markdownの既定表示
+
+- `.vscode/settings.json` の `workbench.editorAssociations` に、`*.md` を標準のMarkdownプレビューで開く設定を追加。
+- VS Code公式資料で設定方法を確認。設定JSONの読み込みと値を確認し、VS Codeでの実際の表示切り替えは未確認。
+
+### 1か月の工程表
+
+- ユーザーの「1か月を目途にしたい」という希望に合わせ、11/14を目標日とする `工程表.md` を作成。
+- 描画、図形認識、敵の撃破、ゲームの流れ、最終確認の順に、週ごとの到達点と完了条件を整理。
+- 1人用の試作版を優先する範囲と認識の数値基準はたたき台。作業時間と実機での結果を見て更新する。
+- AGENTS・開発方針・TODO・Logの参照リンクを現在のファイル名に修正し、工程表へのリンクを追加。
+- 今回は文書のみを変更。Unityの実装・動作確認は実施していない。
+
+### VS Codeの保存時整形
+
+- `.vscode/settings.json` にC#の既定フォーマッター `ms-dotnettools.csharp` と `editor.formatOnSave = true` を設定。
+- C#とC# Dev Kit拡張のインストール済みフォルダー、設定JSONの読み込みを確認。
+- VS Code上でCtrl+Sによる整形の実動作は未確認。
 
 ### ペンの土台
 
